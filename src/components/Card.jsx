@@ -113,14 +113,14 @@ const Card = ({ card }) => {
                 ? setCardStatus("active") : setCardStatus("disabled")
     }
     const HoverHandler = () => {
-      cardStatus === "selected" ?  setHovered (true) : setHovered(false)
+        cardStatus === "selected" ? setHovered(true) : setHovered(false)
     }
 
 
     return (
         <div className={classes.card}>
             <div className={classes.container}
-                
+
                 onMouseLeave={() => {
                     HoverHandler();
                 }}
@@ -136,19 +136,19 @@ const Card = ({ card }) => {
                 }>
                 <div className={classes.content}>
                     {hovered
-                    ?  <div className={classes.head} style={{color: "#E62E7A"}}>Котэ не одобряет?</div>
-                    :  <div className={classes.head} >Сказочное заморское яство</div>}
-                   
+                        ? <div className={classes.head} style={{ color: "#E62E7A" }}>Котэ не одобряет?</div>
+                        : <div className={classes.head} >Сказочное заморское яство</div>}
+
                     <h2 className={classes.title}>Нямушка</h2>
                     <div className={classes.flavour}>{card.flavour}</div>
                     <div className={classes.portionsAmount}> <p>{card.portionsAmount}</p> {card.portionsText} <br /> <p>{card.presentAmount}</p> {card.present}</div>
                 </div>
                 <div className={classes.weight}
-                style={cardStatus === "active"
-                ? { backgroundColor: `#2EA8E6` }
-                : cardStatus === "selected"
-                    ? { backgroundColor: `#D91667` }
-                    : { backgroundColor: `#B3B3B3` }}
+                    style={cardStatus === "active"
+                        ? { backgroundColor: `#2EA8E6` }
+                        : cardStatus === "selected"
+                            ? { backgroundColor: `#D91667` }
+                            : { backgroundColor: `#B3B3B3` }}
                 >{card.weight}<br /><p>кг</p></div>
             </div>
             {cardStatus === "active" ?
